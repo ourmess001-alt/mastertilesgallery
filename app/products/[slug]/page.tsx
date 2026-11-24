@@ -68,14 +68,16 @@ export default function ProductsPage({ params }: { params: { slug: string } }) {
   const [search, setSearch] = useState('');
 
   const visibleProducts = useMemo(() => {
-    // If slug matches a category (e.g. wall-tiles, floor-tiles, etc.)
+    // If slug matches a category or collection
     const categoryMatched = allProducts.filter((product) => {
+      if (product.collectionSlug === params.slug) return true;
       if (params.slug === 'wall-tiles') return product.category === 'wall-tiles';
       if (params.slug === 'floor-tiles') return product.category === 'floor-tiles';
       if (params.slug === 'bathroom-tiles') return product.category === 'bathroom-tiles' || product.suitability.includes('Bathroom');
       if (params.slug === 'kitchen-tiles') return product.category === 'kitchen-tiles' || product.suitability.includes('Kitchen');
       if (params.slug === 'outdoor-tiles') return product.category === 'outdoor-tiles' || product.suitability.includes('Outdoor');
       if (params.slug === 'splashback-tiles') return product.suitability.includes('Splashback');
+      if (categoryDetails[params.slug]) return false;
       return true;
     });
 
@@ -189,20 +191,18 @@ export default function ProductsPage({ params }: { params: { slug: string } }) {
                       1 box = {singleProduct.coveragePerBox} m² &bull; Total coverage: <strong>{totalCoverage} m²</strong>
                     </p>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', background: '#fff', border: '1px solid var(--line)', borderRadius: '2px', padding: '4px 8px' }}>
+                  <div className="pdp-qty-picker">
                     <button
                       onClick={() => setBoxQuantity((q) => Math.max(1, q - 1))}
-                      style={{ border: 0, background: 'none', cursor: 'pointer', padding: '4px 8px' }}
                       aria-label="Decrease box quantity"
                     >
                       <Minus size={14} />
                     </button>
-                    <span style={{ minWidth: '32px', textAlign: 'center', fontSize: '16px', fontWeight: 600 }}>
+                    <span>
                       {boxQuantity}
                     </span>
                     <button
                       onClick={() => setBoxQuantity((q) => q + 1)}
-                      style={{ border: 0, background: 'none', cursor: 'pointer', padding: '4px 8px' }}
                       aria-label="Increase box quantity"
                     >
                       <Plus size={14} />
@@ -217,10 +217,9 @@ export default function ProductsPage({ params }: { params: { slug: string } }) {
               </div>
 
               {/* Actions */}
-              <div style={{ display: 'flex', gap: '14px', marginBottom: '28px', flexWrap: 'wrap' }}>
+              <div className="pdp-actions">
                 <button
                   className="btn-primary"
-                  style={{ flex: 1, padding: '16px 28px' }}
                   onClick={() => {
                     setCartCount((c) => c + boxQuantity);
                     alert(`Added ${boxQuantity} box(es) of "${singleProduct.name}" to your basket!`);
@@ -234,7 +233,6 @@ export default function ProductsPage({ params }: { params: { slug: string } }) {
                     setCartCount((c) => c + 1);
                     setSampleAdded(true);
                   }}
-                  style={{ padding: '16px 24px' }}
                 >
                   {sampleAdded ? <><Check size={16} style={{ color: '#279A4B' }} /> Sample in Basket</> : 'Order Free Cut Sample'}
                 </button>
@@ -255,36 +253,36 @@ export default function ProductsPage({ params }: { params: { slug: string } }) {
                 <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '20px', margin: '0 0 16px', fontWeight: 400 }}>
                   Technical Specifications
                 </h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', fontSize: '13px' }}>
-                  <div style={{ background: '#faf9f6', padding: '10px 14px', borderRadius: '2px' }}>
-                    <span style={{ color: '#77818d', display: 'block' }}>Tile Dimensions</span>
-                    <strong style={{ color: 'var(--ink)' }}>{singleProduct.dimensions}</strong>
+                <div className="pdp-specs-grid">
+                  <div>
+                    <span>Tile Dimensions</span>
+                    <strong>{singleProduct.dimensions}</strong>
                   </div>
-                  <div style={{ background: '#faf9f6', padding: '10px 14px', borderRadius: '2px' }}>
-                    <span style={{ color: '#77818d', display: 'block' }}>Material</span>
-                    <strong style={{ color: 'var(--ink)' }}>{singleProduct.material}</strong>
+                  <div>
+                    <span>Material</span>
+                    <strong>{singleProduct.material}</strong>
                   </div>
-                  <div style={{ background: '#faf9f6', padding: '10px 14px', borderRadius: '2px' }}>
-                    <span style={{ color: '#77818d', display: 'block' }}>Surface Finish</span>
-                    <strong style={{ color: 'var(--ink)' }}>{singleProduct.finish}</strong>
+                  <div>
+                    <span>Surface Finish</span>
+                    <strong>{singleProduct.finish}</strong>
                   </div>
-                  <div style={{ background: '#faf9f6', padding: '10px 14px', borderRadius: '2px' }}>
-                    <span style={{ color: '#77818d', display: 'block' }}>Slip Resistance</span>
-                    <strong style={{ color: 'var(--ink)' }}>{singleProduct.slipRating}</strong>
+                  <div>
+                    <span>Slip Resistance</span>
+                    <strong>{singleProduct.slipRating}</strong>
                   </div>
-                  <div style={{ background: '#faf9f6', padding: '10px 14px', borderRadius: '2px', gridColumn: 'span 2' }}>
-                    <span style={{ color: '#77818d', display: 'block' }}>Suitability</span>
-                    <strong style={{ color: 'var(--ink)' }}>{singleProduct.suitability}</strong>
+                  <div style={{ gridColumn: 'span 2' }}>
+                    <span>Suitability</span>
+                    <strong>{singleProduct.suitability}</strong>
                   </div>
                 </div>
               </div>
 
               {/* Trust Features */}
-              <div style={{ marginTop: '24px', display: 'flex', gap: '20px', fontSize: '12px', color: '#627080' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+              <div className="pdp-trust-features">
+                <span>
                   <Truck size={15} style={{ color: '#ac6543' }} /> Free delivery over £500
                 </span>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                <span>
                   <ShieldCheck size={15} style={{ color: '#ac6543' }} /> 14-day satisfaction returns
                 </span>
               </div>
@@ -454,17 +452,15 @@ export default function ProductsPage({ params }: { params: { slug: string } }) {
                   <p>{formatPrice(product.price)} /m<sup>2</sup></p>
                 </Link>
 
-                <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
+                <div className="catalog-card-actions">
                   <Link
                     href={`/products/${product.slug}`}
                     className="sample-button"
-                    style={{ flex: 1, textAlign: 'center', textDecoration: 'none' }}
                   >
                     View Details
                   </Link>
                   <button
-                    className="sample-button"
-                    style={{ background: 'var(--cream)', border: '1px solid var(--line)' }}
+                    className="sample-button sample-button-quick"
                     onClick={() => {
                       setCartCount((c) => c + 1);
                       alert(`Added a sample of ${product.name} to basket!`);

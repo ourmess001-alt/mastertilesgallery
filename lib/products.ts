@@ -1,3 +1,5 @@
+import { rakProducts } from './rakProducts';
+
 export type Product = {
   id: string;
   slug: string;
@@ -17,6 +19,8 @@ export type Product = {
   categoryName: string;
   description: string;
   swatches?: string[];
+  series?: string;
+  collectionSlug?: string;
 };
 
 export const allProducts: Product[] = [
@@ -180,6 +184,7 @@ export const allProducts: Product[] = [
     description: 'Expansive architectural tiles that visually open up spaces with minimal grout joints and authentic fossil veining.',
     swatches: ['#9e9b94', '#b8b4ab', '#7f7c75', '#5a5852'],
   },
+  ...rakProducts,
 ];
 
 export const roomTiles = [
@@ -210,14 +215,86 @@ export const roomTiles = [
 ];
 
 export const categoryDetails: Record<string, { title: string; intro: string; count: number }> = {
-  'wall-tiles': { title: 'Wall Tiles', intro: 'Bring character to every room with handmade ceramics, natural textures and considered colour.', count: 148 },
+  'wall-tiles': { title: 'Wall Tiles', intro: 'Bring character to every room with handmade ceramics, natural textures and considered colour.', count: 466 },
   'floor-tiles': { title: 'Floor Tiles', intro: 'Create a lasting foundation with beautiful porcelain, stone and terracotta floor tiles.', count: 96 },
-  'bathroom-tiles': { title: 'Bathroom Tiles', intro: 'Turn everyday spaces into calm retreats with tiles made for walls, floors and wet rooms.', count: 82 },
-  'kitchen-tiles': { title: 'Kitchen Tiles', intro: 'Find the perfect backdrop for cooking, gathering and living with our kitchen tile collection.', count: 74 },
+  'bathroom-tiles': { title: 'Bathroom Tiles', intro: 'Turn everyday spaces into calm retreats with tiles made for walls, floors and wet rooms.', count: 320 },
+  'kitchen-tiles': { title: 'Kitchen Tiles', intro: 'Find the perfect backdrop for cooking, gathering and living with our kitchen tile collection.', count: 280 },
   'outdoor-tiles': { title: 'Outdoor Tiles', intro: 'Extend your home outside with durable porcelain paving and timeless outdoor finishes.', count: 42 },
   'splashback-tiles': { title: 'Splashback Tiles', intro: 'Protect and elevate kitchen and vanity walls with tactile, light-reflective glazes.', count: 56 },
   paint: { title: 'Paint', intro: 'Give your rooms a thoughtful finish with rich, enduring colour inspired by the natural world.', count: 68 },
   clearance: { title: 'Clearance', intro: 'Discover last-chance designs and exceptional prices while stocks last.', count: 36 },
   'our-stories': { title: 'Our Stories', intro: 'Explore the ideas, makers and real homes behind our favourite collections.', count: 24 },
   support: { title: 'Support', intro: 'Everything you need to plan your project with confidence, from samples to technical advice.', count: 18 },
+
+  // Collections from RAK Dataset
+  'premija-collection': {
+    title: 'Premija Collection',
+    intro: 'Grand format 30x90 architectural wall tiles featuring coordinated light, dark, and decorative highlighter designs.',
+    count: 30,
+  },
+  'victoria-series': {
+    title: 'Victoria Series',
+    intro: 'Classic 20x30 ceramic wall tiles with timeless proportions for bathrooms and kitchens.',
+    count: 66,
+  },
+  'wall-tiles-25x40': {
+    title: 'Wall Tiles (25x40)',
+    intro: 'Versatile 25x40 wall tile collection with coordinating bases and listello border strips.',
+    count: 75,
+  },
+  'vivid-collection': {
+    title: 'Vivid Collection',
+    intro: 'Modern 30x60 architectural wall tiles with expressive patterns and contemporary palettes.',
+    count: 59,
+  },
+  'aston-series': {
+    title: 'Aston Series',
+    intro: 'Warm European stone-effect wall tiles designed to bring natural calm into modern homes.',
+    count: 30,
+  },
+  'suger-series': {
+    title: 'Suger Series',
+    intro: 'Subtle shimmer and tactile sugar-glaze finishes that catch the light beautifully.',
+    count: 24,
+  },
+  'stone-art': {
+    title: 'Stone Art Series',
+    intro: 'Sculptural stone-look relief wall tiles offering organic texture and depth.',
+    count: 23,
+  },
+  'paris-and-berlin-series': {
+    title: 'Paris & Berlin Series',
+    intro: 'Elongated 25x70 metropolitan ceramic subway tiles with architectural refinement.',
+    count: 14,
+  },
+  'jordana-series': {
+    title: 'Jordana Series',
+    intro: 'Subtle marble-veined wall tiles paired with decorative listellos and accent pieces.',
+    count: 14,
+  },
+  'premium-collection-30x50-5': {
+    title: 'Premium Collection (30x50.5)',
+    intro: 'Proportioned 30x50.5 wall tiles with balanced horizontal runs and elegant glazes.',
+    count: 48,
+  },
+  'vivid-collection-30x50-5': {
+    title: 'Vivid Collection (30x50.5)',
+    intro: 'Compact 30x50.5 decorative wall tiles featuring distinctive modern motifs.',
+    count: 44,
+  },
+  'turin-and-dallas-series': {
+    title: 'Turin & Dallas Series',
+    intro: 'Clean, linear 25x70 ceramic wall surfaces with contemporary edge details.',
+    count: 12,
+  },
+  'dallas-diana-eden-series': {
+    title: 'Dallas, Diana & Eden Series',
+    intro: 'Artistic relief and floral ceramic wall patterns in 25x70 format.',
+    count: 12,
+  },
+  'emir-series': {
+    title: 'Emir Series',
+    intro: 'Rich decorative wall tiles featuring refined motifs and warm bronze accents.',
+    count: 7,
+  },
 };

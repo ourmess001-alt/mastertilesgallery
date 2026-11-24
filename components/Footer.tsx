@@ -17,8 +17,8 @@ export default function Footer() {
           {/* Row 1 */}
           <div className="footer-row footer-row-1">
             <div className="footer-col footer-col-brand">
-              <Link href="/" className="footer-brand">
-                <img src="/logo.png" alt="webnibo" className="footer-logo-img" />
+              <Link href="/" className="footer-brand" aria-label="Master Tiles Gallery">
+                <img src="/logo.png" alt="Master Tiles Gallery" className="footer-logo-img" />
               </Link>
               <p className="footer-brand-desc">
                 Specialists in handmade artisan tiles, luxury natural stone, and British-crafted paints. Crafted with timeless soul.
@@ -65,7 +65,7 @@ export default function Footer() {
               <Link href="/showrooms">Find a Local Showroom</Link>
               <Link href="/delivery">Delivery Information</Link>
               <Link href="/stories">Our Stories &amp; Journal</Link>
-              <Link href="/careers">Careers at webnibo</Link>
+              <Link href="/careers">Careers at Master Tiles Gallery</Link>
             </div>
 
             <div className="footer-col">
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="copyright">
-          © {new Date().getFullYear()} webnibo. All rights reserved. Crafted with timeless soul.
+          © {new Date().getFullYear()} Master Tiles Gallery. All rights reserved. Crafted with timeless soul.
         </div>
       </footer>
 

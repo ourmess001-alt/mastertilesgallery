@@ -1,0 +1,40 @@
+{
+  "id": "rak-379-skm-33-wall-tiles-25x40",
+  "itemNumber": 379,
+  "slug": "rak-379-skm-33-wall-tiles-25x40",
+  "badge": "PDF CATALOG",
+  "brand": "RAK Ceramics",
+  "topCategoryLine": "RAK CERAMICS • WALL TILES (25X40)",
+  "title": "RAK SKM 33 (Wall Tiles (25x40))",
+  "subtitleBn": "আরএকে SKM 33 — Wall Tiles (25x40) (25 x 40)",
+  "descriptionBn": "আর-এ-কে সিরামিকস অরিজিনাল ক্যাটালগের (পৃষ্ঠা 38) Wall Tiles (25x40) সিরিজের SKM 33 (25 cm x 40 cm) টাইলস। ব্রাদার্স টাইলস এন্ড স্যানিটারি মার্ট, জেসন গেইট, ভবানীপুর, গাজীপুর শোরুমে পাইকারি ও খুচরা মূল্যে পাওয়া যাচ্ছে।",
+  "descriptionEn": "Authentic RAK Ceramics SKM 33 from Wall Tiles (25x40) (01 - Ceramic Wall Tiles, 25 cm x 40 cm). Surface finish: Ceramics Wall Tiles. Role: Border / Listello Strip. Extracted from RAK Ceramics Tiles Book PDF Page 38 (Catalog Page 32) and enhanced to 2595x2600px.",
+  "pricePerSqFt": 78,
+  "currency": "৳",
+  "priceUnit": "sq. ft.",
+  "rating": 4.8,
+  "reviewsCount": 24,
+  "specs": {
+    "modelCode": "SKM 33",
+    "variantLabel": "SKM 33",
+    "dimensions": "25 x 40 (10x16 inch)",
+    "sizeCm": "25 cm x 40 cm",
+    "sizeInch": "10x16 inch",
+    "surfaceFinish": "Ceramics Wall Tiles",
+    "category": "Ceramic Wall Tiles • Ceramics Wall Tiles",
+    "mainCategory": "Ceramic Wall Tiles",
+    "series": "Wall Tiles (25x40)",
+    "tileRole": "Border / Listello Strip",
+    "sqFtPerBox": 12.91,
+    "tilesPerBox": 12,
+    "pdfPage": 38,
+    "catalogPage": 32
+  },
+  "recommendedApplications": [
+    "Wall",
+    "Bathroom",
+    "Kitchen"
+  ],
+  "image": "/images/rak-catalog/01-ceramic-wall-tiles/wall-tiles-25x40/379-skm-33/image.jpg",
+  "resolution": "2595x2600"
+}

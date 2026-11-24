@@ -1,232 +1,99 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { MapPin, Phone, Clock, Calendar, Check, Search } from 'lucide-react';
+import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 
-const showrooms = [
-  {
-    id: 'london-chelsea',
-    name: 'London Chelsea Showroom',
-    address: '136 Kings Road, Chelsea, London SW3 4TR',
-    phone: '020 7589 0489',
-    hours: 'Mon – Sat: 9:30 am – 5:30 pm | Sun: 11:00 am – 5:00 pm',
-    features: ['Full Tile Gallery', 'Paint Mixing Studio', 'Luxury Bathroom Displays', 'Expert Colour Consultants'],
-    image: 'https://images.pexels.com/photos/8089256/pexels-photo-8089256.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
-  },
-  {
-    id: 'edinburgh',
-    name: 'Edinburgh Morningside',
-    address: '118 Morningside Road, Edinburgh EH10 4BX',
-    phone: '0131 447 9127',
-    hours: 'Mon – Sat: 9:00 am – 5:00 pm | Sun: Closed',
-    features: ['Handcrafted Ceramic Wall', 'Natural Stone Displays', 'Design Consultation Desk'],
-    image: 'https://images.pexels.com/photos/11020457/pexels-photo-11020457.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
-  },
-  {
-    id: 'bath',
-    name: 'Bath Milsom Street',
-    address: '18 Milsom Street, Bath BA1 1DE',
-    phone: '01225 464 611',
-    hours: 'Mon – Sat: 9:30 am – 5:30 pm | Sun: 11:00 am – 4:00 pm',
-    features: ['Terracotta & Zellige Gallery', 'Outdoor Paving Showcase', 'Sample Takeaway Bar'],
-    image: 'https://images.pexels.com/photos/17497857/pexels-photo-17497857.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
-  },
-  {
-    id: 'cotswolds',
-    name: 'Cotswolds & Oxfordshire',
-    address: 'Twyford Mill, Oxford Road, Adderbury OX17 3HP',
-    phone: '01295 812 088',
-    hours: 'Mon – Fri: 9:00 am – 5:00 pm | Sat: 9:30 am – 5:00 pm',
-    features: ['Flagship Destination', 'Heritage Barn Showroom', 'Free Customer Parking', 'Extensive Garden & Patio Displays'],
-    image: 'https://images.pexels.com/photos/16799768/pexels-photo-16799768.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
-  },
-  {
-    id: 'manchester',
-    name: 'Manchester Deansgate',
-    address: '260 Deansgate, Manchester M3 4LY',
-    phone: '0161 832 9488',
-    hours: 'Mon – Sat: 9:30 am – 5:30 pm | Sun: 11:00 am – 4:00 pm',
-    features: ['Architectural Tile Lab', 'Large Format Porcelain', 'Full Paint Colour Wall'],
-    image: 'https://images.pexels.com/photos/21874959/pexels-photo-21874959.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
-  },
-];
+const showroomAddress = 'Three Brothers Tiles Market, Nolapara, Bhabaniupur, Gazipur Sadar, Gazipur';
 
 export default function ShowroomsPage() {
-  const [search, setSearch] = useState('');
-  const [bookingModal, setBookingModal] = useState<string | null>(null);
-  const [bookingSuccess, setBookingSuccess] = useState(false);
-
-  const filteredShowrooms = showrooms.filter(
-    (s) =>
-      s.name.toLowerCase().includes(search.toLowerCase()) ||
-      s.address.toLowerCase().includes(search.toLowerCase())
-  );
+  const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(showroomAddress)}`;
 
   return (
-    <main className="subpage">
+    <main className="subpage showroom-page">
       <Header />
 
-      <section className="subpage-hero">
-        <div className="breadcrumbs">
+      <section className="showroom-hero">
+        <div className="showroom-breadcrumbs">
           <Link href="/">Home</Link>
           <span>/</span>
-          <span>Showrooms</span>
+          <span>Showroom</span>
         </div>
-        <p className="subpage-eyebrow">TOUCH &amp; EXPERIENCE</p>
-        <h1 className="subpage-title">Find Your Local Showroom</h1>
-        <p className="subpage-intro">
-          There is no substitute for experiencing the tactility of hand-moulded terracotta, running your fingers along authentic glazed zelliges, or viewing large-scale paint swatches in true natural light.
-        </p>
-
-        <div style={{ maxWidth: '480px', margin: '30px auto 0', display: 'flex', background: '#fff', border: '1px solid var(--line)', padding: '6px 14px', alignItems: 'center' }}>
-          <Search size={20} style={{ color: '#78837b', marginRight: '10px' }} />
-          <input
-            style={{ border: 0, outline: 'none', width: '100%', fontSize: '15px' }}
-            placeholder="Search by city, town or postcode..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-      </section>
-
-      <section className="subpage-content">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
-          {filteredShowrooms.map((showroom) => (
-            <div key={showroom.id} className="showroom-card">
-              <div style={{ position: 'relative', minHeight: '240px' }}>
-                <img
-                  src={showroom.image}
-                  alt={showroom.name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              </div>
-
-              <div className="showroom-card-info">
-                <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '26px', margin: '0 0 12px', fontWeight: 400 }}>
-                  {showroom.name}
-                </h2>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', color: '#627080', fontSize: '14px', marginBottom: '8px' }}>
-                  <MapPin size={18} style={{ color: '#ac6543', flexShrink: 0, marginTop: '2px' }} />
-                  <span>{showroom.address}</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#627080', fontSize: '14px', marginBottom: '8px' }}>
-                  <Phone size={18} style={{ color: '#ac6543', flexShrink: 0 }} />
-                  <span>{showroom.phone}</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#627080', fontSize: '14px', marginBottom: '18px' }}>
-                  <Clock size={18} style={{ color: '#ac6543', flexShrink: 0 }} />
-                  <span>{showroom.hours}</span>
-                </div>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-                  {showroom.features.map((feat) => (
-                    <span
-                      key={feat}
-                      style={{
-                        background: 'var(--cream)',
-                        color: 'var(--ink)',
-                        fontSize: '12px',
-                        padding: '4px 10px',
-                        borderRadius: '2px',
-                        border: '1px solid #dedbd4',
-                      }}
-                    >
-                      {feat}
-                    </span>
-                  ))}
-                </div>
-
-                <div style={{ display: 'flex', gap: '14px' }}>
-                  <button
-                    className="btn-primary"
-                    onClick={() => {
-                      setBookingModal(showroom.name);
-                      setBookingSuccess(false);
-                    }}
-                  >
-                    <Calendar size={16} /> Book Design Consultation
-                  </button>
-                  <a href={`tel:${showroom.phone.replaceAll(' ', '')}`} className="btn-secondary">
-                    Call Showroom
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-
-          {filteredShowrooms.length === 0 && (
-            <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-              <p style={{ color: '#627080', fontSize: '18px' }}>No showrooms matched &quot;{search}&quot;.</p>
-              <button className="btn-secondary" onClick={() => setSearch('')}>
-                Show All Showrooms
-              </button>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Booking Modal */}
-      {bookingModal && (
-        <div className="modal-backdrop" onClick={() => setBookingModal(null)}>
-          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-            {bookingSuccess ? (
-              <div style={{ textAlign: 'center', padding: '20px 0' }}>
-                <Check size={48} style={{ color: '#279A4B', margin: '0 auto 16px' }} />
-                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '24px', margin: '0 0 10px' }}>Consultation Booked!</h3>
-                <p style={{ color: '#627080', fontSize: '15px', lineHeight: 1.6, marginBottom: '24px' }}>
-                  Thank you! Our design consultant at <strong>{bookingModal}</strong> will contact you to confirm your date, time, and project notes.
-                </p>
-                <button className="btn-primary" onClick={() => setBookingModal(null)}>
-                  Close
-                </button>
-              </div>
-            ) : (
-              <div>
-                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '24px', margin: '0 0 8px' }}>
-                  Book Consultation: {bookingModal}
-                </h3>
-                <p style={{ color: '#627080', fontSize: '13px', marginBottom: '20px' }}>
-                  Enjoy a complimentary 1-on-1 session with our in-house interior consultants.
-                </p>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setBookingSuccess(true);
-                  }}
-                >
-                  <div className="form-group">
-                    <label>Your Name *</label>
-                    <input className="form-input" required placeholder="Full Name" />
-                  </div>
-                  <div className="form-group">
-                    <label>Email *</label>
-                    <input className="form-input" type="email" required placeholder="name@domain.com" />
-                  </div>
-                  <div className="form-group">
-                    <label>Phone *</label>
-                    <input className="form-input" type="tel" required placeholder="07123 456789" />
-                  </div>
-                  <div className="form-group">
-                    <label>Preferred Date</label>
-                    <input className="form-input" type="date" required />
-                  </div>
-                  <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
-                    <button type="submit" className="btn-primary" style={{ flex: 1 }}>
-                      Confirm Booking
-                    </button>
-                    <button type="button" className="btn-secondary" onClick={() => setBookingModal(null)}>
-                      Cancel
-                    </button>
-                  </div>
-                </form>
-              </div>
-            )}
+        <div className="showroom-hero-copy">
+          <p className="showroom-kicker">TILE SHOWROOM · GAZIPUR</p>
+          <h1>Find the right tile, in person.</h1>
+          <p>
+            Step inside Master Tiles Gallery to explore tile designs, compare finishes, and get
+            inspiration for your next project.
+          </p>
+          <div className="showroom-hero-actions">
+            <a className="showroom-button showroom-button-dark" href="tel:+8801911776657">
+              <Phone size={17} />
+              Call the showroom
+            </a>
+            <a
+              className="showroom-button showroom-button-light"
+              href={directionsUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Get directions
+              <ArrowUpRight size={17} />
+            </a>
           </div>
         </div>
-      )}
+      </section>
+
+      <section className="showroom-gallery-section" aria-label="Showroom photos">
+        <div className="showroom-gallery">
+          <figure className="showroom-photo showroom-photo-main">
+            <img
+              src="/showrooms/showroom-interior.png"
+              alt="View through the tile displays towards the entrance of Master Tiles Gallery"
+            />
+            <figcaption>Explore our tile displays</figcaption>
+          </figure>
+          <figure className="showroom-photo showroom-photo-secondary">
+            <img
+              src="/showrooms/showroom-inside.jpg"
+              alt="Inside the showroom, with tile samples displayed along the walls and floor"
+            />
+            <figcaption>See finishes up close</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="showroom-details-section">
+        <div className="showroom-details-heading">
+          <p className="showroom-kicker">PLAN YOUR VISIT</p>
+          <h2>We look forward to welcoming you.</h2>
+          <p>Visit us at Three Brothers Tiles Market in Gazipur or get in touch before you arrive.</p>
+        </div>
+
+        <div className="showroom-detail-grid">
+          <article className="showroom-detail-card">
+            <span className="showroom-detail-icon"><MapPin size={21} /></span>
+            <p className="showroom-detail-label">VISIT US</p>
+            <h3>Master Tiles Gallery</h3>
+            <p>{showroomAddress}</p>
+            <a className="showroom-text-link" href={directionsUrl} target="_blank" rel="noreferrer">
+              Open in Google Maps <ArrowUpRight size={15} />
+            </a>
+          </article>
+
+          <article className="showroom-detail-card">
+            <span className="showroom-detail-icon"><Phone size={21} /></span>
+            <p className="showroom-detail-label">CALL OR EMAIL</p>
+            <h3>We&apos;re here to help</h3>
+            <a href="tel:+8801911776657">+880 1911-776657 <span>Showroom</span></a>
+            <a href="tel:+8801615970588">+880 1615-970588 <span>Showroom</span></a>
+            <a href="tel:+8801743381500">+880 1743-381500 <span>Abir Hossain, owner</span></a>
+            <a className="showroom-contact-email" href="mailto:abirhossain7741@gmail.com">
+              <Mail size={15} />
+              abirhossain7741@gmail.com
+            </a>
+          </article>
+        </div>
+      </section>
 
       <Footer />
     </main>

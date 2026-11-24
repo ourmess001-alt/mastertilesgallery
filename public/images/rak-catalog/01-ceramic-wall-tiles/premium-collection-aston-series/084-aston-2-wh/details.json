@@ -1,0 +1,40 @@
+{
+  "id": "rak-084-aston-2-wh-premium-collection-aston-series",
+  "itemNumber": 84,
+  "slug": "rak-084-aston-2-wh-premium-collection-aston-series",
+  "badge": "PDF CATALOG",
+  "brand": "RAK Ceramics",
+  "topCategoryLine": "RAK CERAMICS • PREMIUM COLLECTION - ASTON SERIES",
+  "title": "RAK ASTON 2 WH (Premium Collection - Aston Series)",
+  "subtitleBn": "আরএকে ASTON 2 WH — Premium Collection - Aston Series (30 x 60)",
+  "descriptionBn": "আর-এ-কে সিরামিকস অরিজিনাল ক্যাটালগের (পৃষ্ঠা 14) Premium Collection - Aston Series সিরিজের ASTON 2 WH (30 cm x 60 cm) টাইলস। ব্রাদার্স টাইলস এন্ড স্যানিটারি মার্ট, জেসন গেইট, ভবানীপুর, গাজীপুর শোরুমে পাইকারি ও খুচরা মূল্যে পাওয়া যাচ্ছে।",
+  "descriptionEn": "Authentic RAK Ceramics ASTON 2 WH from Premium Collection - Aston Series (01 - Ceramic Wall Tiles, 30 cm x 60 cm). Surface finish: Ceramics Wall Tiles. Role: Light / Upper Base Tile. Extracted from RAK Ceramics Tiles Book PDF Page 14 (Catalog Page 8) and enhanced to 2600x1732px.",
+  "pricePerSqFt": 95,
+  "currency": "৳",
+  "priceUnit": "sq. ft.",
+  "rating": 4.8,
+  "reviewsCount": 24,
+  "specs": {
+    "modelCode": "ASTON 2 WH",
+    "variantLabel": "ASTON 2 WH",
+    "dimensions": "30 x 60 (12x24 inch)",
+    "sizeCm": "30 cm x 60 cm",
+    "sizeInch": "12x24 inch",
+    "surfaceFinish": "Ceramics Wall Tiles",
+    "category": "Ceramic Wall Tiles • Ceramics Wall Tiles",
+    "mainCategory": "Ceramic Wall Tiles",
+    "series": "Premium Collection - Aston Series",
+    "tileRole": "Light / Upper Base Tile",
+    "sqFtPerBox": 15.5,
+    "tilesPerBox": 8,
+    "pdfPage": 14,
+    "catalogPage": 8
+  },
+  "recommendedApplications": [
+    "Wall",
+    "Bathroom",
+    "Kitchen"
+  ],
+  "image": "/images/rak-catalog/01-ceramic-wall-tiles/premium-collection-aston-series/084-aston-2-wh/image.jpg",
+  "resolution": "2600x1732"
+}

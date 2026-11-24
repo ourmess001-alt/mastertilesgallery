@@ -1,0 +1,40 @@
+{
+  "id": "rak-006-7004-lbe-premija-collection",
+  "itemNumber": 6,
+  "slug": "rak-006-7004-lbe-premija-collection",
+  "badge": "PDF CATALOG",
+  "brand": "RAK Ceramics",
+  "topCategoryLine": "RAK CERAMICS • PREMIJA COLLECTION",
+  "title": "RAK 7004 LBE (Premija Collection)",
+  "subtitleBn": "আরএকে 7004 LBE — Premija Collection (30 x 90)",
+  "descriptionBn": "আর-এ-কে সিরামিকস অরিজিনাল ক্যাটালগের (পৃষ্ঠা 7) Premija Collection সিরিজের 7004 LBE (30 cm x 90 cm) টাইলস। ব্রাদার্স টাইলস এন্ড স্যানিটারি মার্ট, জেসন গেইট, ভবানীপুর, গাজীপুর শোরুমে পাইকারি ও খুচরা মূল্যে পাওয়া যাচ্ছে।",
+  "descriptionEn": "Authentic RAK Ceramics 7004 LBE from Premija Collection (01 - Ceramic Wall Tiles, 30 cm x 90 cm). Surface finish: Ceramics Wall Tiles. Role: Light / Upper Base Tile. Extracted from RAK Ceramics Tiles Book PDF Page 7 (Catalog Page 1) and enhanced to 2600x1517px.",
+  "pricePerSqFt": 115,
+  "currency": "৳",
+  "priceUnit": "sq. ft.",
+  "rating": 4.8,
+  "reviewsCount": 24,
+  "specs": {
+    "modelCode": "7004 LBE",
+    "variantLabel": "7004 LBE",
+    "dimensions": "30 x 90 (12x36 inch)",
+    "sizeCm": "30 cm x 90 cm",
+    "sizeInch": "12x36 inch",
+    "surfaceFinish": "Ceramics Wall Tiles",
+    "category": "Ceramic Wall Tiles • Ceramics Wall Tiles",
+    "mainCategory": "Ceramic Wall Tiles",
+    "series": "Premija Collection",
+    "tileRole": "Light / Upper Base Tile",
+    "sqFtPerBox": 14.53,
+    "tilesPerBox": 5,
+    "pdfPage": 7,
+    "catalogPage": 1
+  },
+  "recommendedApplications": [
+    "Wall",
+    "Bathroom",
+    "Kitchen"
+  ],
+  "image": "/images/rak-catalog/01-ceramic-wall-tiles/premija-collection/006-7004-lbe/image.jpg",
+  "resolution": "2600x1517"
+}

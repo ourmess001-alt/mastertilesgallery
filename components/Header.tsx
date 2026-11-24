@@ -63,8 +63,16 @@ export const megaMenus: MegaMenu[] = [
         items: ['Mosaic Tiles', 'Metro Tiles', 'Herringbone Tiles', 'Hexagon Tiles', 'Kit Kat Tiles'],
       },
       {
-        title: 'Designers',
-        items: ['Bert & May', 'Nina Campbell', 'Neisha Crosland', 'Kelly Hoppen', 'Designers Guild'],
+        title: 'Collections',
+        items: [
+          'Premija Collection',
+          'Victoria Series',
+          'Wall Tiles 25x40',
+          'Vivid Collection',
+          'Aston Series',
+          'Suger Series',
+          'Stone Art',
+        ],
       },
     ],
     feature: 'Explore all luxury wall tiles',
@@ -202,7 +210,7 @@ export const megaMenus: MegaMenu[] = [
         items: ['Bathroom Ideas', 'Kitchen Ideas', 'Outdoor Ideas', 'Tile Trends', 'How To Guides'],
       },
       {
-        title: 'About webnibo',
+        title: 'About Master Tiles Gallery',
         items: ['Our Story', 'Our Showrooms', 'Sustainability'],
       },
     ],
@@ -276,8 +284,8 @@ export default function Header({ cartCount = 0 }: { cartCount?: number }) {
 
           {/* Center: Brand Logo */}
           <div className="header-center">
-            <Link className="wordmark" href="/" aria-label="webnibo">
-              <img src="/logo.png" alt="webnibo" className="site-logo" />
+            <Link className="wordmark" href="/" aria-label="Master Tiles Gallery">
+              <img src="/logo.png" alt="Master Tiles Gallery" className="site-logo" />
             </Link>
           </div>
 

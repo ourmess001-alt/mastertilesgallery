@@ -35,6 +35,8 @@ export default function Home() {
   const roomGridRef = useRef<HTMLDivElement>(null);
   const productGridRef = useRef<HTMLDivElement>(null);
 
+  const featuredProducts = allProducts.slice(0, 10);
+
   const shiftRoom = (direction: number) => {
     if (typeof window !== 'undefined' && window.innerWidth <= 640 && roomGridRef.current) {
       roomGridRef.current.scrollBy({ left: direction * 260, behavior: 'smooth' });
@@ -47,7 +49,7 @@ export default function Home() {
     if (typeof window !== 'undefined' && window.innerWidth <= 640 && productGridRef.current) {
       productGridRef.current.scrollBy({ left: direction * 280, behavior: 'smooth' });
     } else {
-      setProductOffset((current) => Math.max(0, Math.min(allProducts.length - 3, current + direction)));
+      setProductOffset((current) => Math.max(0, Math.min(featuredProducts.length - 3, current + direction)));
     }
   };
 
@@ -145,7 +147,7 @@ export default function Home() {
           </div>
         </div>
         <div ref={productGridRef} className="product-grid" style={{ transform: `translateX(-${productOffset * 33.333}%)` }}>
-          {allProducts.map((product) => (
+          {featuredProducts.map((product) => (
             <article className="product-card" key={product.id}>
               <Link href={`/products/${product.slug}`} className="product-card-link" aria-label={`View ${product.name}`}>
                 <div className="product-image">
@@ -194,7 +196,7 @@ export default function Home() {
           ))}
         </div>
         <div className="pagination-dots">
-          {Array.from({ length: Math.max(1, allProducts.length - 2) }).map((_, idx) => (
+          {Array.from({ length: Math.max(1, featuredProducts.length - 2) }).map((_, idx) => (
             <span key={idx} className={idx === productOffset ? 'active' : ''} />
           ))}
         </div>
@@ -204,7 +206,7 @@ export default function Home() {
       <section className="community-section" id="stories">
         <SectionHeading centered>In Your Home</SectionHeading>
         <p>Browse the latest photos from our community.</p>
-        <p>Share how you have used our products by tagging @webnibo on Instagram or using the hashtag #webnibo</p>
+        <p>Share how you have used our products by tagging @mastertilesgallery on Instagram or using the hashtag #mastertilesgallery</p>
         <div className="community-grid">
           {communityImages.map((img, i) => (
             <img key={i} src={img.url} alt={img.alt} />
@@ -252,7 +254,7 @@ export default function Home() {
         </form>
         <label className="consent">
           <input type="checkbox" required />
-          <span>I agree to receiving marketing emails and special deals from webnibo</span>
+          <span>I agree to receiving marketing emails and special deals from Master Tiles Gallery</span>
         </label>
         {subscribed && <p className="success-message">Thank you — you&apos;re on the list.</p>}
       </section>

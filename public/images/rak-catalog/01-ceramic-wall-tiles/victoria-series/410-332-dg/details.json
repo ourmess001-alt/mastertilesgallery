@@ -1,0 +1,40 @@
+{
+  "id": "rak-410-332-dg-victoria-series",
+  "itemNumber": 410,
+  "slug": "rak-410-332-dg-victoria-series",
+  "badge": "PDF CATALOG",
+  "brand": "RAK Ceramics",
+  "topCategoryLine": "RAK CERAMICS • VICTORIA SERIES",
+  "title": "RAK 332 DG (Victoria Series)",
+  "subtitleBn": "আরএকে 332 DG — Victoria Series (20 x 30)",
+  "descriptionBn": "আর-এ-কে সিরামিকস অরিজিনাল ক্যাটালগের (পৃষ্ঠা 39) Victoria Series সিরিজের 332 DG (20 cm x 30 cm) টাইলস। ব্রাদার্স টাইলস এন্ড স্যানিটারি মার্ট, জেসন গেইট, ভবানীপুর, গাজীপুর শোরুমে পাইকারি ও খুচরা মূল্যে পাওয়া যাচ্ছে।",
+  "descriptionEn": "Authentic RAK Ceramics 332 DG from Victoria Series (01 - Ceramic Wall Tiles, 20 cm x 30 cm). Surface finish: Ceramics Wall Tiles. Role: Dark / Lower Base Tile. Extracted from RAK Ceramics Tiles Book PDF Page 39 (Catalog Page 33) and enhanced to 2600x2565px.",
+  "pricePerSqFt": 70,
+  "currency": "৳",
+  "priceUnit": "sq. ft.",
+  "rating": 4.8,
+  "reviewsCount": 24,
+  "specs": {
+    "modelCode": "332 DG",
+    "variantLabel": "332 DG",
+    "dimensions": "20 x 30 (8x12 inch)",
+    "sizeCm": "20 cm x 30 cm",
+    "sizeInch": "8x12 inch",
+    "surfaceFinish": "Ceramics Wall Tiles",
+    "category": "Ceramic Wall Tiles • Ceramics Wall Tiles",
+    "mainCategory": "Ceramic Wall Tiles",
+    "series": "Victoria Series",
+    "tileRole": "Dark / Lower Base Tile",
+    "sqFtPerBox": 10.76,
+    "tilesPerBox": 16,
+    "pdfPage": 39,
+    "catalogPage": 33
+  },
+  "recommendedApplications": [
+    "Wall",
+    "Bathroom",
+    "Kitchen"
+  ],
+  "image": "/images/rak-catalog/01-ceramic-wall-tiles/victoria-series/410-332-dg/image.jpg",
+  "resolution": "2600x2565"
+}

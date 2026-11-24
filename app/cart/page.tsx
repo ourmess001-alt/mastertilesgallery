@@ -141,11 +141,11 @@ export default function CartPage() {
                 </div>
               ))}
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '16px', flexWrap: 'wrap', gap: '10px' }}>
-                <Link href="/products/wall-tiles" className="btn-secondary" style={{ fontSize: '13px' }}>
+              <div className="cart-action-buttons">
+                <Link href="/products/wall-tiles" className="btn-secondary">
                   &larr; Continue Shopping
                 </Link>
-                <button className="btn-secondary" onClick={() => setItems([])} style={{ fontSize: '13px' }}>
+                <button className="btn-secondary" onClick={() => setItems([])}>
                   Clear Basket
                 </button>
               </div>
@@ -177,15 +177,14 @@ export default function CartPage() {
               </div>
 
               {/* Promo Code Form */}
-              <form onSubmit={applyPromo} style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
+              <form onSubmit={applyPromo} className="promo-apply-form">
                 <input
                   placeholder="Code: EXTRA10"
                   className="form-input"
-                  style={{ flex: 1, padding: '8px 12px', fontSize: '13px' }}
                   value={promoCode}
                   onChange={(e) => setPromoCode(e.target.value)}
                 />
-                <button type="submit" className="btn-primary" style={{ padding: '8px 16px', fontSize: '13px' }}>
+                <button type="submit" className="btn-primary">
                   Apply
                 </button>
               </form>

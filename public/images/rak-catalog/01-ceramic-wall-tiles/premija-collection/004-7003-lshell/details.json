@@ -1,0 +1,40 @@
+{
+  "id": "rak-004-7003-lshell-premija-collection",
+  "itemNumber": 4,
+  "slug": "rak-004-7003-lshell-premija-collection",
+  "badge": "PDF CATALOG",
+  "brand": "RAK Ceramics",
+  "topCategoryLine": "RAK CERAMICS • PREMIJA COLLECTION",
+  "title": "RAK 7003 LSHELL (Premija Collection)",
+  "subtitleBn": "আরএকে 7003 LSHELL — Premija Collection (30 x 90)",
+  "descriptionBn": "আর-এ-কে সিরামিকস অরিজিনাল ক্যাটালগের (পৃষ্ঠা 7) Premija Collection সিরিজের 7003 LSHELL (30 cm x 90 cm) টাইলস। ব্রাদার্স টাইলস এন্ড স্যানিটারি মার্ট, জেসন গেইট, ভবানীপুর, গাজীপুর শোরুমে পাইকারি ও খুচরা মূল্যে পাওয়া যাচ্ছে।",
+  "descriptionEn": "Authentic RAK Ceramics 7003 LSHELL from Premija Collection (01 - Ceramic Wall Tiles, 30 cm x 90 cm). Surface finish: Ceramics Wall Tiles. Role: Upper Tile. Extracted from RAK Ceramics Tiles Book PDF Page 7 (Catalog Page 1) and enhanced to 2600x1547px.",
+  "pricePerSqFt": 115,
+  "currency": "৳",
+  "priceUnit": "sq. ft.",
+  "rating": 4.8,
+  "reviewsCount": 24,
+  "specs": {
+    "modelCode": "7003 LSHELL",
+    "variantLabel": "7003 LSHELL",
+    "dimensions": "30 x 90 (12x36 inch)",
+    "sizeCm": "30 cm x 90 cm",
+    "sizeInch": "12x36 inch",
+    "surfaceFinish": "Ceramics Wall Tiles",
+    "category": "Ceramic Wall Tiles • Ceramics Wall Tiles",
+    "mainCategory": "Ceramic Wall Tiles",
+    "series": "Premija Collection",
+    "tileRole": "Upper Tile",
+    "sqFtPerBox": 14.53,
+    "tilesPerBox": 5,
+    "pdfPage": 7,
+    "catalogPage": 1
+  },
+  "recommendedApplications": [
+    "Wall",
+    "Bathroom",
+    "Kitchen"
+  ],
+  "image": "/images/rak-catalog/01-ceramic-wall-tiles/premija-collection/004-7003-lshell/image.jpg",
+  "resolution": "2600x1547"
+}
